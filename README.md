@@ -16,6 +16,8 @@ It should contain arrows on each side to advance the image forward or backward. 
 
 -   Don’t spend too much time worrying about getting your images to display at the correct size – it’s more important to get the slider sliding.
 
+-   Screen sizes - make adaptable for desktop and mobile
+
 -   Set up a very wide div which will contain the individual “slides” of each image. By appropriately positioning that div inside a container div (which acts like a picture frame), you can choose which slide is visible at any given time.
 
 -   Once you have the slider positioned properly, build functions for “next” and “previous” which will advance to the next or previous slide accordingly. Make the transitions smooth using simple effects.
