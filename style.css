@@ -9,13 +9,28 @@ body {
 }
 
 .container {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     text-align: center;
 }
 
+.bc {
+    width: 10px;
+    height: 10px;
+    color: white;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 1.1rem;
+}
+
+.active {
+    height: 20px;
+    font-size: 2rem;
+    color: red;
+}
+
 .image-holder {
-    height: 90vh;
+    height: 80vh;
     width: 95vw;
     overflow: hidden;
     display: flex;
@@ -26,12 +41,13 @@ body {
 }
 
 .navigation {
-    height: 8vh;
+    height: 5vh;
     width: 95vw;
 }
 
 .left-arrow,
-.right-arrow {
+.right-arrow,
+.save-btn {
     display: inline-block;
     font-size: 2rem;
     padding: 20px;

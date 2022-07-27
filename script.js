@@ -1,28 +1,37 @@
 'use strict';
 
-function selectRandomImages(amountOfImagesRequired) {
-    let arrayOfImages = [];
+let currentImage = 4;
 
-    for (let a = 0; a < amountOfImagesRequired; a++) {
-        arrayOfImages[a] = `<img src="https://source.unsplash.com/random">`;
-    }
-
-    return arrayOfImages;
-}
+let imageArray = [
+    'banana.jpg',
+    'hiddenplane.jpg',
+    'lightbulb.jpg',
+    'pencils.jpg',
+    'pentops.jpg',
+    'rose.jpg',
+    'tv.jpg',
+];
 
 const imageSpace = document.querySelector('.image-holder');
 
-const leftArrow = document.querySelector('.left-arrow');
-leftArrow.addEventListener('click', () => {
-    imageSpace.innerHTML = '<p>Waiting...</p>';
+imageSpace.innerHTML = `<img src='./img/${imageArray[currentImage]}'>`;
 
-    setTimeout(function () {
-        imageSpace.innerHTML =
-            '<img src="https://source.unsplash.com/random" />';
-    }, 5000);
+const leftArrow = document.querySelector('.left-arrow');
+
+leftArrow.addEventListener('click', () => {
+    if ((currentImage = -1)) currentImage = 6;
+    imageSpace.innerHTML = `<img src='./img/${imageArray[currentImage]}'>`;
+    currentImage--;
 });
 
 const rightArrow = document.querySelector('.right-arrow');
+
 rightArrow.addEventListener('click', () => {
-    imageSpace.innerHTML = '<img src="https://source.unsplash.com/random" />';
+    if (currentImage == 7) {
+        currentImage = 0;
+    }
+
+    imageSpace.innerHTML = `<img src='./img/${imageArray[currentImage]}'>`;
+
+    currentImage++;
 });
