@@ -14,7 +14,12 @@ const imageSpace = document.querySelector('.image-holder');
 
 const leftArrow = document.querySelector('.left-arrow');
 leftArrow.addEventListener('click', () => {
-    imageSpace.innerHTML = '<img src="https://source.unsplash.com/random" />';
+    imageSpace.innerHTML = '<p>Waiting...</p>';
+
+    setTimeout(function () {
+        imageSpace.innerHTML =
+            '<img src="https://source.unsplash.com/random" />';
+    }, 5000);
 });
 
 const rightArrow = document.querySelector('.right-arrow');
