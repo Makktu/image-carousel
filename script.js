@@ -27,7 +27,14 @@ const imageSpace = document.querySelector('.image-holder');
 const breadcrumbs = document.querySelectorAll('.bc');
 
 breadcrumbs.forEach((crumb) => {
-    crumb.addEventListener('click', (e) => {});
+    crumb.addEventListener('click', (e) => {
+        currentImage = +e.target.classList[1];
+        imageSpace.innerHTML = `<img src='./img/${imageArray[currentImage]}'>`;
+        sortBreadcrumbs(currentImage);
+        clearTimeout(btnTimer);
+
+        startTimer();
+    });
 });
 
 imageSpace.innerHTML = `<img src='./img/${imageArray[currentImage]}'>`;
@@ -61,10 +68,10 @@ rightArrow.addEventListener('click', () => {
 });
 
 function notPressed() {
-    let pickedPic = Math.floor(Math.random() * 6);
-    if (pickedPic == currentImage) notPressed();
-    imageSpace.innerHTML = `<img src='./img/${imageArray[pickedPic]}'>`;
-    sortBreadcrumbs(pickedPic);
+    currentImage++;
+    if (currentImage > imageArray.length - 1) currentImage = 0;
+    imageSpace.innerHTML = `<img src='./img/${imageArray[currentImage]}'>`;
+    sortBreadcrumbs(currentImage);
     startTimer();
 }
 
